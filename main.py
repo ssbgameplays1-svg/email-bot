@@ -131,10 +131,10 @@ def main():
     conv = ConversationHandler(
         entry_points=[CommandHandler("send", send_start)],
         states={
-            EMAIL: [MessageHandler(filters.TEXT & \~filters.COMMAND, get_email)],
-            SUBJECT: [MessageHandler(filters.TEXT & \~filters.COMMAND, get_subject)],
-            BODY: [MessageHandler(filters.TEXT & \~filters.COMMAND, get_body)],
-            TIMES: [MessageHandler(filters.TEXT & \~filters.COMMAND, get_times)],
+            EMAIL: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_email)],
+            SUBJECT: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_subject)],
+            BODY: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_body)],
+            TIMES: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_times)],
             CONFIRM: [CommandHandler("confirm", confirm_send)],
         },
         fallbacks=[CommandHandler("cancel", cancel)],
